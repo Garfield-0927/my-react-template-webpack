@@ -1,8 +1,10 @@
-import React from 'react'
-
-
+import React from "react";
+import img from "@/assets/img/test.jpg"
 const HelloWorld: React.FC = () => (
-  <h1>Hello World</h1>
-)
+	<div>
+		<h1>Hello World</h1>
+		<img src={img} />
+	</div>
+);
 
-export default HelloWorld
+export default HelloWorld;

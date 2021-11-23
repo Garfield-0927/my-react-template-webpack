@@ -7,7 +7,7 @@ const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 
 module.exports = {
   entry: path.resolve(PROJECT_PATH, './src/index.tsx'),
-  
+
   module: {
     rules: [
       {
@@ -15,11 +15,15 @@ module.exports = {
         loader: 'babel-loader',
         options: { cacheDirectory: true },
         exclude: /node_modules/,
-      },
+      }, 
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: 'asset',
+      }
     ]
   },
 
-  
+
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(PROJECT_PATH, './public/index.html'),
