@@ -131,5 +131,10 @@ run :
 
 ```sh
 npm run prepare
+npx husky add .husky/pre-commit "npm run lint-staged"
 ```
+
+
+
+### 4. style lint
 

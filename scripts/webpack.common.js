@@ -2,6 +2,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { PROJECT_PATH } = require('./PATH')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+const StylelintPlugin = require('stylelint-webpack-plugin');
 
 
 
@@ -26,7 +27,7 @@ module.exports = {
         loader: 'babel-loader',
         options: { cacheDirectory: true },
         exclude: /node_modules/,
-      }, 
+      },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         type: 'asset',
@@ -44,6 +45,13 @@ module.exports = {
         configFile: path.resolve(PROJECT_PATH, './tsconfig.json'),
       },
     }),
+    new StylelintPlugin({
+      files: '../src/**/*.less',
+      failOnError: false,
+      format: 'less',
+      fix: true, // 修复不规范的样式代码
+      syntax: 'less'
+    })
   ],
 
   resolve: {
