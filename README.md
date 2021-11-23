@@ -8,6 +8,10 @@
 - react、react-dom
 - typescript
 - less
+- husky
+- eslint
+- stylelint
+- commitlint
 
 
 
@@ -25,6 +29,20 @@ npm run dev
 // build
 npm run build
 ```
+
+
+
+commit & add
+
+```sh
+// add
+git add .
+
+// commit 
+npm run commit
+```
+
+
 
 
 
