@@ -1,33 +1,6 @@
 module.exports = {
   extends: ['stylelint-config-standard', 'stylelint-config-rational-order', 'stylelint-prettier/recommended'],
   rules: {
-    // 'prettier/prettier': [true, { singleQuote: false }],
-    // at-rule-no-unknown: 屏蔽一些scss等语法检查
-    'at-rule-no-unknown': [true, { ignoreAtRules: ['mixin', 'extend', 'content'] }], // 禁止使用未知的 at 规则
-    'rule-empty-line-before': [
-      // 要求或禁止在规则声明之前有空行
-      'always-multi-line',
-      {
-        except: ['first-nested'],
-        ignore: ['after-comment'],
-      },
-    ],
-    'at-rule-empty-line-before': [
-      // 要求或禁止在 at 规则之前有空行
-      'always',
-      {
-        except: ['blockless-after-same-name-blockless', 'first-nested'],
-        ignore: ['after-comment'],
-      },
-    ],
-    'comment-empty-line-before': [
-      // 要求或禁止在注释之前有空行
-      'always',
-      {
-        except: ['first-nested'],
-        ignore: ['stylelint-commands'],
-      },
-    ],
     'block-no-empty': true, // 禁止出现空块
     'declaration-empty-line-before': 'never', // 要求或禁止在声明语句之前有空行。
     'declaration-block-no-duplicate-properties': true, // 在声明的块中中禁止出现重复的属性

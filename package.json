@@ -7,7 +7,9 @@
     "dev": "webpack-dev-server --config ./scripts/webpack.dev.js",
     "build": "webpack --config ./scripts/webpack.prod.js",
     "prepare": "husky install",
-    "lint-staged": "lint-staged --allow-empty"
+    "lint-staged": "lint-staged --allow-empty",
+    "commit": "git cz",
+    "commitlint": "commitlint --config commitlint.config.js -e -V"
   },
   "repository": {
     "type": "git",
@@ -26,6 +28,8 @@
     "@babel/preset-react": "^7.16.0",
     "@babel/preset-typescript": "^7.16.0",
     "@babel/runtime-corejs3": "^7.16.3",
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
     "@types/react": "^17.0.36",
     "@types/react-dom": "^17.0.11",
     "@types/webpack-env": "^1.16.3",
@@ -33,7 +37,9 @@
     "@typescript-eslint/parser": "^5.4.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.2.3",
+    "commitizen": "^4.2.4",
     "css-loader": "^6.5.1",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.3.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-loader": "^4.0.2",
@@ -83,5 +89,10 @@
     "src/**/*.{css,less}": [
       "stylelint --fix"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   }
 }
