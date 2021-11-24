@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { PROJECT_PATH } = require('./PATH')
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const StylelintPlugin = require('stylelint-webpack-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 
 
@@ -11,17 +12,6 @@ module.exports = {
 
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.tsx?$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {
-          emitWarning: true, // 这个配置需要打开，才能在控制台输出warning信息
-          emitError: true, // 这个配置需要打开，才能在控制台输出error信息
-          fix: true // 是否自动修复，如果是，每次保存时会自动修复可以修复的部分
-        }
-      },
       {
         test: /\.(tsx?|js)$/,
         loader: 'babel-loader',
@@ -51,7 +41,8 @@ module.exports = {
       format: 'less',
       fix: true, // 修复不规范的样式代码
       syntax: 'less'
-    })
+    }),
+    new ESLintPlugin()
   ],
 
   resolve: {
